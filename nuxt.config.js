@@ -45,6 +45,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    '@nuxtjs/auth',
   ],
   /*
   ** Axios module configuration
@@ -54,6 +55,13 @@ export default {
     host: 'localhost',
     port: 3000,
     prefix: '/api'
+  },
+  auth: {
+    endpoints: {
+      login:  { url: '/users/sign_in' },
+      logout: { url: '/users/sign_out', method: 'delete' },
+      user:   { url: '/users/current' }
+    }
   },
   /*
   ** Build configuration
